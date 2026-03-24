@@ -89,7 +89,20 @@ async function loginController (req, res){
     })
 }
 
+async function getmeController(req, res){
+    const userId = req.user.id
+    const user = await usermodel.findById(userId)
+
+    res.status(200).json({
+        username: user.username,
+        bio: user.bio,
+        profilePicture: user.profilePicture,
+        email: user.email
+    })
+}
+
 module.exports = {
     registerController,
-    loginController
+    loginController,
+    getmeController
 }
