@@ -1,12 +1,13 @@
 import React from "react";
 import Approutes from "../Approutes";
 import './style.scss'
+import PostContext from "./features/post/PostContext";
 
 const App = () => {
   return (
-    <div>
+    <PostContext>
       <Approutes/>
-    </div>
+    </PostContext>
   );
 };
 
